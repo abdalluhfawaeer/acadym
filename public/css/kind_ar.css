@@ -1,0 +1,17 @@
+body {
+    background-color: var(--white-color);
+    font-family: var(--body-font-family);
+    direction: rtl;
+}
+.ms-auto {
+    margin-left: unset;
+    margin-right: auto !important;
+}
+.me-2 {
+    margin-right: unset;
+    margin-left: 0.5rem !important;
+}
+.ms-lg-auto {
+    margin-left: unset;
+    margin-right: auto !important;
+}
