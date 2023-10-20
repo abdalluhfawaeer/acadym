@@ -3,50 +3,42 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-12 mb-4">
-                    <img src="images/logo.png" class="logo img-fluid" alt="">
+                    <img src="{{ asset("storage/". $nav->img) }}" class="logo img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <h5 class="site-footer-title mb-3">Quick Links</h5>
-
                     <ul class="footer-menu">
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Our Story</a></li>
-
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Newsroom</a></li>
-
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Causes</a></li>
-
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Become a volunteer</a></li>
-
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Partner with us</a></li>
+                        <li class="footer-menu-item"><a href="#top" class="footer-menu-link">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a></li>
+                        <li class="footer-menu-item"><a href="#top" class="footer-menu-link">{{ app()->getLocale() == 'ar' ? $nav->menu_2_ar : $nav->menu_2_en }}</a></li>
+                        <li class="footer-menu-item"><a href="#about" class="footer-menu-link">{{ app()->getLocale() == 'ar' ? $nav->menu_3_ar : $nav->menu_3_en }}</a></li>
+                        <li class="footer-menu-item"><a href="#section_3" class="footer-menu-link">{{ app()->getLocale() == 'ar' ? $nav->menu_4_ar : $nav->menu_4_en }}</a></li>
+                        <li class="footer-menu-item"><a href="#clint" class="footer-menu-link">{{ app()->getLocale() == 'ar' ? $nav->menu_5_ar : $nav->menu_5_en }}</a></li>
+                        <li class="footer-menu-item"><a href="#section_6" class="footer-menu-link">{{ app()->getLocale() == 'ar' ? $nav->menu_6_ar : $nav->menu_6_en }}</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-12 mx-auto">
-                    <h5 class="site-footer-title mb-3">Contact Infomation</h5>
-
                     <p class="text-white d-flex mb-2">
                         <i class="bi-telephone me-2"></i>
-
                         <a href="tel: 305-240-9671" class="site-footer-link">
-                            305-240-9671
+                            {{ $contact->phone1 }}
                         </a>
                     </p>
-
                     <p class="text-white d-flex">
                         <i class="bi-envelope me-2"></i>
-
                         <a href="mailto:info@yourgmail.com" class="site-footer-link">
-                            donate@charity.org
+                            {{ $header->email }}
                         </a>
                     </p>
-
                     <p class="text-white d-flex mt-3">
                         <i class="bi-geo-alt me-2"></i>
-                        Akershusstranda 20, 0150 Oslo, Norway
+                        {{ app()->getLocale() == 'ar' ? $header->address_ar : $header->address_en }}
                     </p>
-
-                    <a href="#" class="custom-btn btn mt-3">Get Direction</a>
+                    @if(app()->getLocale() == 'ar')
+                        <a class="custom-btn btn mt-3" href="/en">English</a>
+                    @else
+                        <a class="custom-btn btn mt-3" href="/ar">العربية</a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -54,35 +46,36 @@
         <div class="site-footer-bottom">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-6 col-md-7 col-12">
-                        <p class="copyright-text mb-0">Copyright © 2036 <a href="#">Kind Heart</a> Charity Org.
-                            Design: <a href="https://templatemo.com" target="_blank">TemplateMo</a><br>Distribution:
-                            <a href="https://themewagon.com">ThemeWagon</a>
-                        </p>
+                        <p class="copyright-text mb-0">Copyright © 2023 <a href="/">Adam Academy for International Training and Development</a></p>
                     </div>
-
                     <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
                         <ul class="social-icon">
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-twitter"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-facebook"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-instagram"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-linkedin"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="https://youtube.com/templatemo" class="social-icon-link bi-youtube"></a>
-                            </li>
+                            @if(!empty($header->twitter))
+                                <li class="social-icon-item">
+                                    <a href="{{ $header->twitter }}" class="social-icon-link bi-twitter"></a>
+                                </li>
+                            @endif
+                            @if(!empty($header->facebook))
+                                <li class="social-icon-item">
+                                    <a href="{{ $header->facebook }}" class="social-icon-link bi-facebook"></a>
+                                </li>
+                            @endif
+                            @if(!empty($header->instagram))
+                                <li class="social-icon-item">
+                                    <a href="{{ $header->instagram }}" class="social-icon-link bi-instagram"></a>
+                                </li>
+                            @endif
+                            @if(!empty($header->youtube))
+                                <li class="social-icon-item">
+                                    <a href="{{ $header->youtube }}" class="social-icon-link bi-youtube"></a>
+                                </li>
+                            @endif
+                            @if(!empty($header->whatsapp))
+                                <li class="social-icon-item">
+                                    <a href="{{ $header->whatsapp }}" class="social-icon-link bi-whatsapp"></a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
 

@@ -48,7 +48,7 @@
     </header>
     <nav class="navbar navbar-expand-lg bg-light shadow-lg" style="z-index: 99999999999">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 <img src="{{ asset("storage/". $nav->img) }}" class="logo img-fluid" alt="Kind Heart Charity">
                 <span>
                     {{ app()->getLocale() == 'ar' ? $nav->title_ar : $nav->title_en }}
@@ -61,13 +61,36 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    @foreach($menu as $link)
-                        @if(!empty($link))
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#top">{{ $link }}</a>
-                            </li>
-                        @endif
-                    @endforeach
+                    @if(!empty($nav->menu_1_ar) && !empty($nav->menu_1_en))
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#top">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                        </li>
+                    @endif
+                    @if(!empty($nav->menu_2_ar) && !empty($nav->menu_2_en))
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#top">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                        </li>
+                    @endif
+                    @if(!empty($nav->menu_3_ar) && !empty($nav->menu_3_en))
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#about">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                        </li>
+                    @endif
+                    @if(!empty($nav->menu_4_ar) && !empty($nav->menu_4_en))
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_3">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                        </li>
+                    @endif
+                    @if(!empty($nav->menu_5_ar) && !empty($nav->menu_5_en))
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#clint">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                        </li>
+                    @endif
+                    @if(!empty($nav->menu_6_ar) && !empty($nav->menu_6_en))
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_6">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                        </li>
+                    @endif
                     <li class="nav-item ms-3">
                         @if(app()->getLocale() == 'ar')
                             <a class="nav-link custom-btn custom-border-btn btn" href="/en">English</a>

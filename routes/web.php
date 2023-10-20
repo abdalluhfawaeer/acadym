@@ -20,6 +20,7 @@ Route::middleware('lang')->get('/{lang}', [AuthCoutroller::class, 'home']);
 Route::middleware('lang')->get('/', function () {
     return redirect()->to('/'.app()->getLocale());
 });
+Route::middleware('lang')->get('/{lang}/cours', [AuthCoutroller::class, 'cours']);
 
 Route::get('{lang}/admin', function () {
     return view('admin.welcome');
