@@ -22,7 +22,7 @@ class Welcome extends Component
             if (!empty($wel['title_ar'.$i]) && !empty($wel['title_en'.$i])) {
                 $this->welcome[] = [
                   'img' => $wel['image'.$i],
-                  'title' => app()->getLocale() ? $wel['title_ar'.$i] : $wel['title_en'.$i]
+                  'title' => app()->getLocale() == 'ar' ? $wel['title_ar'.$i] : $wel['title_en'.$i]
                 ];
             }
         }
