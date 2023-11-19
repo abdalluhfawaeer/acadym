@@ -21,7 +21,7 @@ class Goals extends Component
         for ($i = 1 ; $i <= 7 ; $i++) {
             if (!empty($goals['goal_ar_'.$i]) && !empty($goals['goal_en_'.$i])) {
                 $this->list[] = [
-                    'list' => app()->getLocale() ? $goals['goal_ar_'.$i] : $goals['goal_en_'.$i]
+                    'list' => app()->getLocale() == 'ar' ? $goals['goal_ar_'.$i] : $goals['goal_en_'.$i]
                 ];
             }
         }
