@@ -68,27 +68,27 @@
                     @endif
                     @if(!empty($nav->menu_2_ar) && !empty($nav->menu_2_en))
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#top">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                            <a class="nav-link click-scroll" href="#top">{{ app()->getLocale() == 'ar' ? $nav->menu_2_ar : $nav->menu_2_en }}</a>
                         </li>
                     @endif
                     @if(!empty($nav->menu_3_ar) && !empty($nav->menu_3_en))
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#about">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                            <a class="nav-link click-scroll" href="#about">{{ app()->getLocale() == 'ar' ? $nav->menu_3_ar : $nav->menu_3_en }}</a>
                         </li>
                     @endif
                     @if(!empty($nav->menu_4_ar) && !empty($nav->menu_4_en))
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                            <a class="nav-link click-scroll" href="#section_3">{{ app()->getLocale() == 'ar' ? $nav->menu_4_ar : $nav->menu_4_en }}</a>
                         </li>
                     @endif
                     @if(!empty($nav->menu_5_ar) && !empty($nav->menu_5_en))
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#clint">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                            <a class="nav-link click-scroll" href="#clint">{{ app()->getLocale() == 'ar' ? $nav->menu_5_ar : $nav->menu_5_en }}</a>
                         </li>
                     @endif
                     @if(!empty($nav->menu_6_ar) && !empty($nav->menu_6_en))
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_6">{{ app()->getLocale() == 'ar' ? $nav->menu_1_ar : $nav->menu_1_en }}</a>
+                            <a class="nav-link click-scroll" href="#section_6">{{ app()->getLocale() == 'ar' ? $nav->menu_6_ar : $nav->menu_6_en }}</a>
                         </li>
                     @endif
                     <li class="nav-item ms-3">
