@@ -17,7 +17,7 @@ class Welcome extends Component
 
     public function mount() {
         $wel = WolcomeHome::first();
-        $this->title = app()->getLocale() ? $wel->title_ar_main : $wel->title_en_main;
+        $this->title = app()->getLocale() == 'ar' ? $wel->title_ar_main : $wel->title_en_main;
         for ($i = 1 ; $i <= 4 ; $i++) {
             if (!empty($wel['title_ar'.$i]) && !empty($wel['title_en'.$i])) {
                 $this->welcome[] = [
